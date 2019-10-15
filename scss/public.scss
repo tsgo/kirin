@@ -241,3 +241,80 @@ html {
     };
   }
 }
+
+
+table {
+  display: inline-block;
+  width: 100%;
+  max-width: 1200px;
+  padding: 50px 0;
+  background-color: #BE9C7B;
+
+  tbody {
+    display: inline-block;
+    width: 100%;
+    max-width: 690px;
+
+    tr {
+      display: inline-block;
+      width: 100%;
+
+      &.t01 {
+        padding: 20px 0;
+        border-bottom: 5px solid #000;
+        text-align: left;
+      }
+
+      &.t02 {
+        border-bottom: 1px dotted #000;
+        margin-bottom: 20px;
+      }
+
+      &.t03 {
+        padding: 20px;
+        background-color: #D8D8D8;
+      }
+
+      &.t04 {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 5px solid #000;
+      }
+
+      td {
+        display: inline-block;
+        width: 100%;
+
+        &.d02 {
+          font-size: 13px;
+          padding: 10px 0;
+          color: #000;
+          text-align: right;
+        }
+
+        &.d03 {
+          text-align: left;
+          font-size: 16px;
+          color: #253643;
+          line-height: 24px;
+        }
+
+        &.d04 {
+          text-align: right;
+          padding-bottom: 15px;
+        }
+
+        &.d05 {
+          font-size: 13px;
+          color: #000;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+
+
+
+
+}
