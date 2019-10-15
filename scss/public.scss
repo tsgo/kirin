@@ -1,0 +1,243 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 - 2018, OAF2E
+ * @license     http://opensource.org/licenses/MIT  MIT License
+ * @link        https://www.ioa.tw/
+ */
+
+@import "_oa";
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+html {
+  min-height: 100%;
+
+  body {
+    position: relative;
+
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: rgba(90, 90, 90, 1.00);
+    text-align: center;
+    font-size: medium;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif, "微軟正黑體", "Microsoft JhengHei";
+
+    background: $mainBackgroundColor;
+    background-image: $mainBackgroundImage;
+
+    @include font-smoothing(antialiased);
+  }
+}
+
+.banner {
+  $max-n: 10; //  項目最多幾個
+
+  position: relative;
+  display: inline-block;
+  width: 600px;
+  height: 300px;
+
+  border: 1px solid rgba(255, 0, 0, .3);
+  
+  .items {
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    
+    .item {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      height: 100%;
+
+      background-color: white;
+      border: 1px solid rgba(255, 0, 0, .3);
+
+      @include transition(left .3s);
+    }
+  }
+
+  a {
+    position: absolute;
+    top: calc(50% - 32px / 2);
+    z-index: 2;
+    
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    cursor: pointer;
+    text-align: center;
+    @include border-radius(50%);
+    
+    background-color: rgba(39, 40, 34, .300);
+    @include transition(background-color .3s);
+    
+    &.left {
+      left: 0;
+    }
+    &.right {
+      right: 0;
+    }
+    &:hover {
+      background-color: rgba(39, 40, 34, .500);
+    }
+    &:active {
+      background-color: rgba(39, 40, 34, .700);
+    }
+  }
+  .pages {
+    $w: 12px; // 點的寬高
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    
+    display: inline-block;
+    width: 100%;
+    height: $w;
+    border: 1px solid rgba(255, 0, 0, .3);
+
+    text-align: center;
+
+    > div {
+      display: inline-block;
+      margin: 0 auto;
+      @include clearfix();
+      
+      > i {
+        display: inline-block;
+        width: $w;
+        height: $w;
+        border: 1px solid rgba(255, 0, 0, .3);
+        margin: 0 3px;
+        cursor: pointer;
+
+        @include border-radius(50%);
+        background-color: rgba(39, 40, 34, .300);
+
+        @include transition(background-color .3s);
+
+
+        &:hover { // 滑過
+          background-color: rgba(39, 40, 34, .500);
+        }
+      }
+    }
+  }
+
+  $max-unit: 10; //  data-unit 最大值
+  @for $i from 1 through $max-unit {
+    @include range-width(0, 450px) {
+      width: 100%;
+      &[data-unit='#{$i}'] {
+        .items {
+          .item {
+            width: 100%;
+
+            @for $j from 1 through $max-n {
+              &:nth-child(#{$j}) {
+                left: calc(#{($j - 1)} * 100%);
+              }
+            }
+          }
+        }
+        
+        $p: $max-n;
+
+        @for $j from 1 through $p {
+          &[data-page='#{$j}'] {
+            .items {
+              .item {
+                @for $k from 1 through $max-n {
+                  &:nth-child(#{$k}) {
+                    left: calc(#{($k - $j)} * 100%);
+                  }
+                }
+              }
+            }
+
+            .pages {
+              > div {
+                > i {
+                  @for $k from 1 through $p {
+                    &:nth-child(#{$k}) {
+                      @if $k == $j {
+                        // 當頁下的點顏色
+                        background-color: rgba(39, 40, 34, .700);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+    @include range-width(450px) {
+      &[data-unit='#{$i}'] {
+        .items {
+          .item {
+            width: calc(100% / #{$i});
+
+            @for $j from 1 through $max-n {
+              &:nth-child(#{$j}) {
+                left: calc(#{($j - 1)} * (100% / #{$i}));
+              }
+            }
+          }
+        }
+        
+        $p: ceil($max-n / $i);
+
+        @for $j from 1 through $p {
+          &[data-page='#{$j}'] {
+            .items {
+              .item {
+                @for $k from 1 through $max-n {
+                  &:nth-child(#{$k}) {
+                    left: calc(#{($k - ($j - 1) * $i - 1)} * (100% / #{$i}));
+                  }
+                }
+              }
+            }
+
+            .pages {
+              > div {
+                > i {
+                  @for $k from 1 through $p {
+                    &:nth-child(#{$k}) {
+                      @if $k == $j {
+                        // 當頁下的點顏色
+                        background-color: rgba(39, 40, 34, .700);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+  }
+}
