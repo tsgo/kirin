@@ -1,0 +1,92 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$changeWidth: 800px; //螢幕寬多少要改變
+
+@media screen and (min-width: 0) and (max-width: #{$changeWidth - 1px}) {
+  .qa_table {
+    display: block;
+
+    .tr {
+      display: block;
+      margin: 10px;
+      border: 1px solid #856C50;
+
+      .td {
+        display: block;
+        border: 1px solid #856C50;
+        text-align: left;
+
+        &:before {
+          content: attr(title);
+          display: inline-block;
+          width: 100px;
+          background-color: #FFFDEA;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $changeWidth) {
+  .qa_table {
+    display: table;
+    width: 92%;
+    margin: 0 auto;
+
+    .tr {
+      display: table-row;
+      @include clearfix();
+      
+      &:first-child {
+        border-left: 1px solid #856C50;
+      }
+
+      .td {
+        display: table-cell;
+        border-right: 1px solid #856C50;
+        background-color: #FFFDEA;
+
+        &.w20 {
+          width: 20% !important;
+        }
+
+        &.w40 {
+          width: 40% !important;
+        }
+
+        > * {
+            border-top: 1px solid #856C50;
+          }
+
+        .td_line {
+          display: inline-block;
+          width: 100%;
+          color: #5D5D5D;
+          font-size: 1.1rem;
+          padding: 10px;
+        }
+      }
+
+      &:first-child { // 第一行的 tr
+        
+        .td {
+          position: relative;
+
+          &:before {
+            content: attr(title);
+            display: inline-block;
+            width: 100%;
+            background-color: #D8D8D8;
+            font-size: 1.1rem;
+            color: #000;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
