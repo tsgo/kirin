@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/* Create with Compass + SCSS on windows */
+/* ... 齊力樂門後臺板面增修20190508 ... */
+div.header .homeGo:before, .cartInfo .itemList .pic figure:before, .cartInfo .itemList .name:before,
+.cartInfo .itemList .singlePrice:before,
+.cartInfo .itemList .totalPrice:before,
+.cartInfo .itemList .count:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+  /*搭配:before 擬元素的垂直置中效果part1*/
+}
+
+div.header .homeGo i, .cartInfo .itemList .pic figure img, .cartInfo .itemList .name > div,
+.cartInfo .itemList .singlePrice > div,
+.cartInfo .itemList .totalPrice > div,
+.cartInfo .itemList .count > div {
+  display: inline-block;
+  vertical-align: middle;
+  /*搭配:before 擬元素的垂直置中效果part2*/
+}
+
+.hiddenItem {
+  font-size: 1px;
+  line-height: 0;
+  text-indent: 0;
+  visibility: hidden;
+}
+
+.hideItem {
+  display: none;
+}
+
+.clearFloat {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+  height: 0;
+  display: block;
+  width: 100%;
+}
+
+body {
+  /*background-color: #fff;*/
+  background-image: url("../img/paper_bg_01.png");
+}
+
+#wrapper {
+  /*padding-bottom: 110px;*/
+  height: auto;
+  overflow: inherit;
+}
+
+.content-page {
+  margin: 0;
+  overflow: inherit;
+  padding: 1rem;
+  min-height: calc(100vh - 60px - 90px - 110px);
+  font-size: 1rem;
+  color: #000;
+}
+.content-page a {
+  color: #e82121;
+}
+
+div.header {
+  /*background-color: #f8f9fb;*/
+  padding: 1rem;
+}
+div.header .float-left,
+div.header .float-right {
+  height: 35px;
+  line-height: 35px;
+}
+div.header .float-left {
+  width: 200px;
+}
+div.header .float-right {
+  width: calc(100% - 200px);
+}
+div.header .logo {
+  background-image: url("../img/paper_bg_01.png");
+}
+div.header .logo img {
+  width: 100%;
+  height: auto;
+}
+div.header .homeGo {
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+div.pageTitle {
+  margin: 0 1rem;
+  padding-top: 40px;
+  padding-bottom: 35px;
+  border-top-color: #000 !important;
+  border-bottom-color: #000 !important;
+}
+div.pageTitle h2 {
+  color: #000;
+}
+div.pageTitle .breadcrumb-item a {
+  color: #e82121;
+}
+div.pageTitle .breadcrumb-item:before,
+div.pageTitle .breadcrumb-item.active {
+  color: #000;
+}
+
+div.footer {
+  background: none;
+  padding: 1.5rem 1.5rem;
+  top: auto;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  position: static;
+  width: auto;
+  margin-top: 90px;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  border-top-color: #000 !important;
+  /*position: fixed;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;*/
+}
+div.footer p, div.footer a {
+  font-size: 1rem;
+  color: #000;
+}
+
+.logoFooter {
+  height: 60px;
+  /*background-color: #fff;*/
+  background-image: url("../img/login_footer_logo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+@media (max-width: 767.98px) {
+  div.pageTitle {
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+}
+.cartInfo .itemList {
+  max-height: 420px;
+  overflow: auto;
+}
+.cartInfo .itemList li {
+  position: relative;
+  margin-bottom: 25px;
+}
+.cartInfo .itemList li > * {
+  font-size: 1.25rem;
+  color: #1d2f3c;
+}
+.cartInfo .itemList li > * strong {
+  font-size: 0.75rem;
+}
+.cartInfo .itemList .pic figure {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cartInfo .itemList .pic figure img {
+  width: 100%;
+  height: auto;
+}
+.cartInfo .itemList .name > div,
+.cartInfo .itemList .singlePrice > div,
+.cartInfo .itemList .totalPrice > div,
+.cartInfo .itemList .count > div {
+  width: 92%;
+}
+.cartInfo .itemList .name strong {
+  color: #ac7737;
+}
+.cartInfo .itemList .count .box,
+.cartInfo .itemList .count button,
+.cartInfo .itemList .count input {
+  background-color: #eceef3 !important;
+}
+.cartInfo .itemList .count input {
+  border: none !important;
+}
+.cartInfo .itemList .count button {
+  width: 25%;
+}
+.cartInfo .itemList .count input {
+  width: calc(100% - 58%);
+}
+.cartInfo .itemList .removeBtn {
+  position: absolute;
+  top: calc((100% - 45px) / 2);
+  right: 0;
+  width: 60px;
+  height: 45px;
+  background: none !important;
+  font-size: 2rem;
+  color: #ff0000;
+}
+.cartInfo .targetInfo {
+  background-color: #eceef3;
+}
+.cartInfo .targetInfo h4 {
+  font-size: 1.25rem;
+  color: #1d2f3c;
+}
+.cartInfo .targetInfo p {
+  font-size: 1.25rem;
+  /*height: 50px;*/
+  line-height: 50px;
+}
+.cartInfo .targetInfo p strong {
+  color: #1d2f3c;
+}
+.cartInfo .priceCount {
+  border-style: double;
+  border-color: #ac7737;
+  border-left: none;
+  border-right: none;
+}
+.cartInfo .priceCount p {
+  font-size: 1.25rem;
+  line-height: 30px;
+}
+.cartInfo .priceCount p .total {
+  color: #ac7737;
+  font-size: 1.75rem;
+}
+.cartInfo .ruleOption {
+  font-size: 1rem;
+}
+
+.noteField {
+  height: calc(100vh - 60px - 90px - 110px);
+}
+.noteField .wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  min-width: 400px;
+  max-width: 50vw;
+}
+.noteField .wrapper h2.label {
+  position: absolute;
+  top: -17px;
+  left: 2rem;
+  color: #ac7737;
+  font-size: 26px;
+  background-color: #fff;
+}
+.noteField .wrapper p {
+  font-size: 18px;
+  color: #253643;
+}
+
+.pwdHelp {
+  position: relative;
+  margin: 0 auto;
+  min-width: 360px;
+  max-width: 40vw;
+}
+.pwdHelp div {
+  color: #253643;
+  font-size: 18px;
+}
+.pwdHelp div .form-group {
+  margin: 0;
+}
+.pwdHelp .valueLabel {
+  /*&:before{
+  	@extend %valignBefore;
+  }*/
+  line-height: 45px;
+}
+.pwdHelp .valueLabel strong {
+  /*@extend %valignDo;*/
+}
+.pwdHelp .backLogin {
+  position: absolute;
+  bottom: -90px;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 576px) {
+  .content-page {
+    min-height: inherit;
+  }
+
+  #wrapper {
+    padding-bottom: 0;
+    height: auto;
+  }
+
+  .logoFooter {
+    height: 45px;
+    background-size: 90%;
+  }
+
+  div.footer {
+    background: none;
+    padding: 0.5rem 0;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  div.footer p.text-right {
+    margin-bottom: 5px !important;
+    text-align: center !important;
+    line-height: 1.5;
+  }
+  div.footer p, div.footer a {
+    font-size: 0.9rem;
+  }
+
+  .cartInfo .itemList .removeBtn {
+    top: 7px;
+    right: 7px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+  }
+  .cartInfo .btn.btn-primary.pl-5.pr-5.ml-3 {
+    margin-top: 1rem !important;
+  }
+
+  .noteField {
+    padding-top: 50px;
+    height: inherit;
+  }
+  .noteField .wrapper {
+    position: relative;
+    top: auto;
+    transform: none;
+  }
+  .noteField .wrapper,
+  .noteField .pwdHelp {
+    min-width: inherit;
+    max-width: inherit;
+    width: 95%;
+  }
+  .noteField .wrapper .valueLabel,
+  .noteField .pwdHelp .valueLabel {
+    text-align: left !important;
+  }
+  .noteField .wrapper .row > div,
+  .noteField .pwdHelp .row > div {
+    padding-left: 0 !important;
+  }
+  .noteField .wrapper .backLogin,
+  .noteField .pwdHelp .backLogin {
+    position: static;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+}
