@@ -19,6 +19,8 @@
     <link href="css/kirin_b2b_theme.css" rel="stylesheet" type="text/css">
     <link href="css/kirin_b2b_full_page.css" rel="stylesheet" type="text/css">
 
+    <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
+
   </head>
 
   <body>
@@ -44,8 +46,8 @@
         <!-- page title begin -->
 
         <div class='border-bottom pageTitle padding_boxs'>
-          <a href="#" class='T_menu'>故障問題集與對策</a>
-          <a href="#" class='T_menu'>錯誤燈號顯示</a>
+          <a href="javascript:;" onclick='document.getElementById("ta").scrollIntoView(false)' class='T_menu'>故障問題集與對策</a>
+          <a href="javascript:;" onclick='document.getElementById("tb").scrollIntoView(false)' class='T_menu'>錯誤燈號顯示</a>
         </div>
         
         <!-- content begin -->
@@ -70,9 +72,9 @@
             </div>
           </div>
 
-         <!-- 關於商品下單 -->
-          <div class='T_cent_boxs'>
-            <p class='T_cent_title'>關於商品下單</p>
+         <!-- 故障問題集與對策 -->
+          <div class='T_cent_boxs' id='ta'>
+            <p class='T_cent_title'>故障問題集與對策</p>
             <!-- <div class='qa_table'></div> -->
 
             <div class='qa_table'>
@@ -112,6 +114,106 @@
                 </div>
               </div>
 
+              <div class='tr'>
+                <div class='td w20' title='故障狀況'>
+                  <p class='td_line'>寶特瓶無法放入啤酒機內。</p>
+                </div>
+                <div class='td w40' title='發生原因'>
+                  <p class='td_line'>寶特瓶插入孔內的積水凍結。</p>
+                  <p class='td_line'>寶特瓶插入孔內有異物。</p>
+                </div>
+                <div class='td w40' title='處理方式'>
+                  <p class='td_line'>請倒入溫水將冰塊溶解。</p>
+                  <p class='td_line'>請將異物取出。</p>
+                </div>
+              </div>
+
+              <div class='tr'>
+                <div class='td w20' title='故障狀況'>
+                  <p class='td_line'>注出啤酒時泡沫過多。</p>
+                </div>
+                <div class='td w40' title='發生原因'>
+                  <p class='td_line'>啤酒酒管未確實插入。</p>
+                  <p class='td_line'>啤酒酒管乾燥。（寶特瓶取出後立即）</p>
+                  <p class='td_line'>碳酸氣瓶的減壓閥壓力設定過高。</p>
+                  <p class='td_line'>注出的啤酒冰涼嗎?<br/>是否放入預冷後的啤酒?</p>
+                </div>
+                <div class='td w40' title='處理方式'>
+                  <p class='td_line'>請重新插入啤酒酒管。</p>
+                  <p class='td_line'>請少量發泡，重複操作10~20次。</p>
+                  <p class='td_line'>減壓閥的壓力請設定至0.8kg/cm2。</p>
+                  <p class='td_line'>請確認啤酒是冰涼的。</p>
+                </div>
+              </div>
+
+              <div class='tr'>
+                <div class='td w20' title='故障狀況'>
+                  <p class='td_line'>啤酒機電源無法開啟。</p>
+                </div>
+                <div class='td w40' title='發生原因'>
+                  <p class='td_line'>啤酒機有水滴或溢水。<br/><b class='white'>d</b></p>
+                  <p class='td_line'>接地線通過的機器週邊，啤酒機有噪音產生。</p>
+                </div>
+                <div class='td w40' title='處理方式'>
+                  <p class='td_line'>請將電源重新開啟，若狀況未改善，請於上班時間致電業務窗口。</p>
+                  <p class='td_line'>請將接地線連接到其他位置。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 錯誤燈號顯示 -->
+          <div class='T_cent_boxs' id='tb'>
+            <p class='T_cent_title'>錯誤燈號顯示</p>
+            <!-- <div class='qa_table'></div> -->
+
+            <div class='T_lr_boxs'>
+              <div class='T_l_box'><div class='T_pic'><img src="img/img_faq_dispenser.png"></div></div>
+              <div class='T_r_box'>
+                <p class='T_r_type13'>
+                  電源開啟時，若顯示錯誤燈號 <b>【 E 】</b>。<br/>請確認以下的錯誤記號表示，確認異常狀況並處理後，再次將電源重新開啟。
+                </p>
+              </div>
+            </div>
+
+            <div class='qa_table'>
+              <div class='tr'>
+                <div class='td w20' title='錯誤顯示'>
+                  <p class='td_line'>E01～04</p>
+                </div>
+                <div class='td w40' title='異常狀況'>
+                  <p class='td_line'>冷卻槽的溫度過高。</p>
+                </div>
+                <div class='td w40' title='處理方式'>
+                  <p class='td_line'>請放入預冷後(7℃以下)的寶特瓶。</p>
+                </div>
+              </div>
+    
+              <div class='tr'>
+                <div class='td w20' title='錯誤顯示'>
+                  <p class='td_line'>E11～14</p>
+                </div>
+                <div class='td w40' title='異常狀況'>
+                  <p class='td_line'>啤酒機內的散熱扇片溫度過高。</p>
+                </div>
+                <div class='td w40' title='處理方式'>
+                  <p class='td_line'>請清洗空氣濾網。</p>
+                  <p class='td_line'>請遠離啤酒機周圍的熱源。</p>
+                  <p class='td_line'>請保持啤酒機上方出風口順暢。</p>
+                </div>
+              </div>
+
+              <div class='tr'>
+                <div class='td w20' title='錯誤顯示'>
+                  <p class='td_line'>其他顯示</p>
+                </div>
+                <div class='td w40' title='異常狀況'>
+                  <p class='td_line'>機器發生無法排解的故障。</p>
+                </div>
+                <div class='td w40' title='處理方式'>
+                  <p class='td_line'>請於上班時間致電台灣麒麟業務窗口。</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -123,13 +225,17 @@
       <div class="row no-gutters border-top footer">
         <div class="col-xl-3 col-md-3 logoFooter"></div>
         <div class="col-xl-9 col-md-9 cprs">
-          <p class="m-0 text-right"><a href="https://www.kirin.com.tw/" target="_blank" class="waves-effect waves-notransition">臺灣麒麟官網</a><span class="pl-2 pr-2">|</span><a href="https://www.kirin.com.tw/service.php" target="_blank" class="waves-effect waves-notransition">聯絡我們</a><!-- 身份為麒麟系列時沒有連絡我們 --><span class="pl-2 pr-2">|</span><a href="https://www.kirin.com.tw/privacy.php" target="_blank" class="waves-effect waves-notransition">隱私權及個資保護聲明</a></p>
-            <p class="m-0 text-right">Copyright © 2016 Kirin Taiwan Company, All Rights Reserved.</p>
+          <p class="m-0 text-right">
+            <a href="https://www.kirin.com.tw/" target="_blank" class="waves-effect waves-notransition">臺灣麒麟官網</a>
+            <!-- 身份為麒麟系列時沒有連絡我們 -->
+            <span class="pl-2 pr-2">|</span>
+            <a href="https://www.kirin.com.tw/privacy.php" target="_blank" class="waves-effect waves-notransition">隱私權及個資保護聲明</a>
+          </p>
+            <p class="m-0 text-right">Copyright © 2019 Kirin Taiwan Company, All Rights Reserved.</p>
         </div>
       </div>
       <!-- footer end -->
     </div>
-
 
     </body>
 </html>
