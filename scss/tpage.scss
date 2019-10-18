@@ -95,6 +95,13 @@ html {
       width: calc(100% / 3 - 15px * 2 / 3);
       float: left;
 
+      @include range-width(0, 450px) {
+        width: 100%;
+
+        &:nth-child(n+2) {
+          margin-top: 15px;
+        } 
+      }
 
       img {
         display: inline-block;
@@ -104,10 +111,19 @@ html {
       &:nth-child(3n+2) {
         margin-left: 15px;
         margin-right: 15px; 
+
+        @include range-width(0, 450px) {
+          margin-left: 0;
+          margin-right: 0; 
+        }
       }
 
       &:nth-child(n+4) {
         margin-top: 20px;
+
+         @include range-width(0, 450px) {
+          margin-top: 15px;
+         }
       }
     }
   }
@@ -118,6 +134,12 @@ html {
   width: 100%;
   max-width: 1100px;
   padding: 20px 0;
+
+  .big_pic {
+    display: inline-block;
+    width: 100%;
+    max-width: 700px;
+  }
 
   p {
     display: inline-block;
@@ -196,6 +218,12 @@ html {
         width: 100%;
         border: 5px solid #FFFFFF;
         padding: 10px;
+
+        img {
+          display: inline-block;
+          width: 100%;
+          max-width: 250px;
+        }
       }
     }
 
@@ -209,6 +237,14 @@ html {
         padding-top: 20px;
       }
 
+      &.Trall {
+        max-width: 100%;
+
+        @include range-width(0, 450px) {
+          padding-top: 0 !important;
+        }
+      }
+
       .T_r_type13 {
         display: inline-block;
         width: 100%;
@@ -218,6 +254,14 @@ html {
         font-size: 1.1rem;
         line-height: 2rem;
         text-align: left;
+
+        &.top-space {
+          padding-top: 30px;
+
+          @include range-width(0, 450px) {
+            padding-top: 0;
+          }
+        }
       }
     }
 
@@ -230,11 +274,21 @@ html {
     .vl {
       max-width: 770px;
       background-color: rgba(255, 0, 0, 0.2);
+
+      @include range-width(0, 450px) {
+        max-width: 100%;
+      }
     }
 
     .vr {
       max-width: calc(100% - 770px);
       padding-left: 20px;
+
+      @include range-width(0, 450px) {
+        max-width: 100%;
+        padding-left: 0;
+        padding-top: 20px;
+      }
 
       .v_r_type13 {
         display: inline-block;
@@ -325,6 +379,10 @@ html {
     float: left;
     text-align: left;
 
+    &.w_all {
+      width: 100%;
+    }
+
     @include range-width(0, 450px) {
       width: 100%;
     }
@@ -335,6 +393,11 @@ html {
       font-size: 1.1rem;
       color: #000;
       padding-bottom: 10px;
+
+      &.bigI {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
 
       &:before {
         display: inline-block;
@@ -360,8 +423,18 @@ html {
   cursor: pointer;
   text-decoration: none;
 
+  @include range-width(0, 450px) {
+    float: none;
+    margin-bottom: 20px;
+  }
+
   &.down_left {
     float: left !important;
+
+    @include range-width(0, 450px) {
+      margin-bottom: 5px;
+      float: right !important;
+    }
   }
 
   img {
@@ -374,6 +447,7 @@ html {
     background-color: #856C50;
   }
 }
+
 
 
 
