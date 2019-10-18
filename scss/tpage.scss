@@ -55,6 +55,10 @@ html {
   padding: 20px;
   background-color: rgba(0, 0, 0, .4);
 
+  &.T_open {
+    display: none;
+  }
+
   .v_black_box {
     display: inline-block;
     width: 100%;

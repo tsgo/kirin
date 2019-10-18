@@ -5,7 +5,13 @@
  * @link        https://www.ioa.tw/
  */
  
+
 $(function () {
 
+
+  $('#c1').click(function () {
+    console.log('111');
+    // $("#o1").attr("style","display:none;");
+  });
 
 });
