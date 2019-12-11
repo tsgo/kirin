@@ -171,12 +171,29 @@ html {
           margin-left: -30px;
         }
       }
+
+      &.T_nub19 {
+        width: calc(100% - 19%);
+      }
+      &.T_nub20 {
+        width: calc(100% - 14%);
+      }
+      &.T_nub21 {
+        width: calc(100% - 10%);
+      }
+
     }
 
     &.T_cent_type18 {
       font-size: 1.4rem;
       line-height: 2.2rem;
       text-align: center;
+    }
+
+    &.T_cent_type18_a {
+      font-size: 1.2rem;
+      line-height: 2.2rem;
+      text-align: left;
     }
 
     &.T_cent_title {
@@ -189,6 +206,15 @@ html {
       &.no_border {
         border-bottom: 0;
       }
+    }
+
+    &.T_cent_title_pa {
+      font-size: 1.2rem;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: 20px;
+      text-align: left;
+      padding: 5px 0;
     }
   }
 
@@ -283,6 +309,10 @@ html {
       max-width: 770px;
       background-color: rgba(255, 0, 0, 0.2);
 
+      &.v100 {
+        max-width: 100%;
+      }
+
       @include range-width(0, 450px) {
         max-width: 100%;
       }
@@ -325,6 +355,107 @@ html {
           padding-right: 10px;
         }
       }
+    }
+  }
+
+  .pa_box {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 40px 40px;
+    @include border-radius(100px);
+    background-color: white;
+
+    .pat01 {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.6rem;
+      color: black;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .pat02 {
+      display: inline-block;
+      width: 60%;
+      font-size: 1.4rem;
+      color: black;
+      border-top: 1px solid #cbcbcb;
+      border-bottom: 1px solid #cbcbcb;
+      padding: 5px 0;
+      margin: 10px 0;
+    }
+
+    .pa_img {
+      display: inline-block;
+      width: 100%;
+      max-width: 160px;
+    }
+  }
+
+  .pa_c {
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px 0;
+  }
+
+  .pa_map_box {
+    display: inline-block;
+    width: 90%;
+    background-color: rgba(39, 40, 34, .5);
+    padding: 20px;
+    @include clearfix();
+    position: relative;
+
+    @include range-width(0, 501px) {
+      padding: 20px 20px 50px 20px;
+    }
+
+    .pa_w01 {
+      display: inline-block;
+      width: 100%;
+      color: white;
+      font-size: 1.2rem;
+      text-align: left;
+    }
+
+    .pa_w02 {
+      display: inline-block;
+      width: 100%;
+      color: white;
+      font-size: 1rem;
+      text-align: left;
+      padding-left: 20px;
+
+      @include range-width(0, 501px) {
+        padding-left: 0;
+      }
+    }
+
+    .pa_w_box {
+      display: inline-block;
+      width: 50%;
+      float: left;
+      margin-top: 30px;
+
+      @include range-width(0, 501px) {
+        width: 100%;
+      }
+    }
+
+    .pa_link {
+      display: inline-block;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 1rem;
+      color: yellow;
+
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+
     }
   }
 }
@@ -464,6 +595,8 @@ html {
 .mb_left {
   text-align: left ;
 }
+
+
 
 
 
