@@ -216,6 +216,37 @@ html {
       text-align: left;
       padding: 5px 0;
     }
+
+    &.ac_t_title {
+      display: inline-block;
+      font-size: 1.4rem;
+      color: black;
+      font-weight: 600;
+      text-align: left;
+      position: relative;
+
+      &:before {
+        display: inline-block;
+        content: attr(title);
+        font-size: 1.4rem;
+        color: black;
+      }
+
+      &:after {
+        display: inline-block;
+        content:'';
+        width: 90%;
+        height: 1px;
+        background-color: black;
+        position: absolute;
+        top: 16px;
+        right: 0;
+
+        @include range-width(0, 450px) {
+          width: 75%;
+        }
+      }
+    }
   }
 
   .T_lr_boxs {
@@ -227,6 +258,10 @@ html {
 
     &.pb0 {
       padding-bottom: 0;
+    }
+
+    &.pbtop30 {
+      padding-top: 30px;
     }
 
 
@@ -243,6 +278,14 @@ html {
         max-width: 100%;
       }
 
+      &.T400 {
+        max-width: 400px;
+
+        @include range-width(0, 450px) {
+          max-width: 100%;
+        }
+      }
+
       .T_pic {
         display: inline-block;
         width: 100%;
@@ -253,6 +296,10 @@ html {
           display: inline-block;
           width: 100%;
           max-width: 250px;
+
+          &.iii4 {
+            max-width: 400px;
+          }
         }
 
         &.ma30 {
@@ -264,6 +311,17 @@ html {
     .T_r_box {
       max-width: calc(100% - 280px);
       padding-left: 20px;
+
+      &.T400_r {
+        max-width: calc(100% - 400px);
+        padding-left: 20px;
+
+        @include range-width(0, 450px) {
+          max-width: 100%;
+          padding-left: 0;
+          padding-top: 20px;
+        }
+      }
 
       @include range-width(0, 450px) {
         max-width: 100%;
@@ -278,6 +336,7 @@ html {
           padding-top: 0 !important;
         }
       }
+
 
       .T_r_type13 {
         display: inline-block;
@@ -597,7 +656,18 @@ html {
 }
 
 
+.ttta {
+  display: inline-block;
+  text-decoration: none;
+  color: black !important;
+  font-size: 1rem;
+  font-weight: 400;
+  padding-right: 20px;
 
-
+  &:hover {
+    text-decoration: underline;
+    color: red;
+  }
+}
 
 
