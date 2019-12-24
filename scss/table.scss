@@ -63,12 +63,22 @@ $changeWidth: 800px; //螢幕寬多少要改變
             }
 
             .tp01 {
+              display: none;
+            }
+
+            .tp11 {
+              display: inline-block;
               color: rgba(23, 23, 23, 1.00);
               font-size: 1.4rem;
               font-weight: 600;
             }
 
             .tp02 {
+              display: none;
+            }
+
+            .tp03 {
+              display: inline-block;
               color: rgba(23, 23, 23, .5);
               font-size: 1rem;
             }
@@ -87,6 +97,21 @@ $changeWidth: 800px; //螢幕寬多少要改變
           padding: 10px;
           text-align: left;
           border-top: 1px solid #856C50;
+
+          &.td_he {
+            padding-top: 9px;
+          }
+
+          i {
+            display: inline-block;
+            width: 100%;
+            color: #5D5D5D;
+            font-size: 1.1rem;
+            padding: 10px;
+            text-align: left;
+            font-style: normal;
+            // padding-top: 120px;
+          }
         }      
       
         &:before {
@@ -141,7 +166,18 @@ $changeWidth: 800px; //螢幕寬多少要改變
           text-align: left;
 
           &.td_he {
-            padding-top: 150px;
+            padding-top: 9px;
+          }
+
+          i {
+            display: inline-block;
+            width: 100%;
+            color: #5D5D5D;
+            font-size: 1.1rem;
+            padding: 10px;
+            text-align: left;
+            font-style: normal;
+            padding-top: 120px;
           }
         }
 
@@ -174,9 +210,17 @@ $changeWidth: 800px; //螢幕寬多少要改變
               font-weight: 600;
             }
 
+            .tp11 {
+              display: none;
+            }
+
             .tp02 {
               color: rgba(23, 23, 23, .5);
               font-size: 1rem;
+            }
+
+            .tp03 {
+              display: none;
             }
           }
         }
